@@ -3,5 +3,5 @@ import pylab
 
 def funcion(data):
     plt.plot(data)
-    plt.title("grafica analogica")
+    plt.title("grafica analogica prueba")
     plt.show()
