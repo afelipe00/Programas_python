@@ -7,7 +7,7 @@ for i in range(5):
     d = d + c
     print("paso ",i," : ",d)
 print("este es el valor final: ",d)
-print("este es el valor : ",d)
+print("este es valor : ",d)
 print("este es el valor final: ",d)
 print("este es el valor: ",d)
 for i in range(7):
