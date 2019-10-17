@@ -2,7 +2,7 @@
 import matplotlib.animation as anim
 import matplotlib.pyplot as plt
 import serial
-import modcsv
+import Programas_python.modcsv
 import tkinter
 from matplotlib import style
 from tkinter import *
@@ -41,7 +41,7 @@ ser = serial.Serial(
 ser.isOpen()
 #funcion de presionado del boton
 def boton(lista):
-	modcsv.crear_mod(lista)
+	Programas_python.modcsv.crear_mod(lista)
 #funcion de la ventana
 def animate(i):
 	#ciclo infinito(permite terminar el proceso de la ventana)
