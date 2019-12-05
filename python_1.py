@@ -94,6 +94,20 @@ for i in range(0,limit):
     print(i,": for lets go")
 
 #ESTRUCTURAS DE DATOS
+#listas
+lista = list() #forma 1 de declarar una lista
+lista2 = [] #forma 2 de declarar una lista
+print(type(lista))
+lista = ['a','b','d','f','e','e','r',12,'e']
+#formas de imprimir una lista
+print(lista)
+i=0
+for i in lista:
+    print(i)
+    print("posicion", lista.index(i))
+
+
+
 
 
 
