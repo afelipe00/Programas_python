@@ -2,11 +2,12 @@ import re
 
 
 def lectura():
-    with open("C:\Users\Felipe Diaz\Documents\GitHub\Programas_python\corpus.txt","r") as lec:
-        text = lec.readline()
-        contador = count_words(text)
-
+    documentos = []
+    with open("corpus.txt","r") as lec:
+        for lineas, texto in enumerate(lec):
+            documentos.append(texto)
+    return documentos
 
 
 if __name__ == "__main__":
-    lectura()
+    print(lectura())
