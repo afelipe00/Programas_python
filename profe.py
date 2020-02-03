@@ -23,7 +23,7 @@ def count_words(text):
 
 
 def test_run():
-	with open("c/Users/Felipe Diaz/Documents/GitHub/Programas_python/corpus.txt", "r") as f:
+	with open("corpus.txt", "r") as f:
 		text = f.read()
 		counts = count_words(text)
 		sorted_counts = sorted(counts.items(), key=lambda pair: pair[1], reverse=True)
