@@ -12,7 +12,7 @@ data = 0
 
 while True:
     if ser.inWaiting()>0:
-        tx = ['1','2','3','4','5','6']
+        tx = ['1','5','3','4','5','6']
         for i in range(5):
             ser.write(tx[i].encode())
         lec = str(ser.readline())
