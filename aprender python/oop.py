@@ -64,4 +64,9 @@ herencia: tal cual como en la vida real el concepto de herencia es cuando una cl
 (padre) aprovechando asi las caracteristicas de esta clase (padre), esto no significa que la clase que heredo estos metodos o atributos
 sea igual a la clase madre, pueden ser diferentes.
  
+pass: es una palabra reservada que denota un "contenido vacio" 
 """
+
+
+if __name__ == "__main__":
+    pass
