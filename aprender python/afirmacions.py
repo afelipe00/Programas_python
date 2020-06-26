@@ -8,8 +8,8 @@ def recibir_string(lista_de_palabras):
     primera_letra = []
 
     for palabra in lista_de_palabras:
-        assert type(palabra) == str , f'{palabra}no es una palabra'
-        assert len(palabra) > 0 , f'no se admiten espacion vacios'
+        assert type(palabra) == str , f'{palabra} no es una palabra'
+        assert len(palabra) > 0 , f' no se admiten espacion vacios'
 
         primera_letra.append(palabra[0])
     
