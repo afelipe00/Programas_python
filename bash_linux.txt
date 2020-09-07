@@ -1,0 +1,88 @@
+Taller comandos Bash de Linux
+
+1. comandos para acceder de forma relativa a un directorios
+
+ - cd home
+ de forma relativa es acceder a un directorio avanzando carpeta por carpeta
+
+2. comandos para acceder de forma absoluta a un directorio
+
+ - cd user/documentos/...
+ de forma absoluta es acceder a un directorio con la direccion especifica.
+
+3. listar archivos dentro de un directorio por:
+
+ ls -a  #muestra los archivos dentro del directorio incluyendo los ocultos
+ ls -t  #muestra los archivos dentro del directorio ordenados por fechar de modificacion
+ ls -X  #muestra los archivos dentro del directorio ordenados por su extension
+ ls -l  #muestra los archivos dentro del directorio con toda su informacion.
+ ls -lh #muestra los archivos dentro del directorio incluyendo el tamaño
+ ls -R  #muestra los archivos dentro del directorio uncluyendo los subdirectorios de forma recursiva
+ ls -S  #muestra los archivos dentor de un directorio ordenados por tamaño de archivos
+
+4. Ubicarse en la raiz y listar los directorios
+
+ - cd /
+ - cd ls -d */
+
+5. listar archivos ocultos de home
+
+ - cd home
+ - cd ls -a
+
+6. ubicarse en la raiz y listar todos los directorios con b
+
+ - cd /
+ - cd ls -d b*
+
+7. crear un directorio test dentro de home
+
+ - cd home
+ - cd mkdir test
+
+8. crear dentro del directorio test archivos de textos.
+
+ - cd home/test
+ - touch test.txt
+
+9. renombrar text a text2
+
+ - mv test test2
+
+10. copiar archivo.
+
+ - cp text /home
+
+11. mover archivo 
+
+ - mv text /home
+
+12. remover el archivo
+
+ - rm -r texto.txt
+
+13. buscar un archivo 
+
+ - find *txt
+
+14. crear en el home un archivo de texto
+
+ - cd home
+ - sudo touch texto.txt
+
+15. ver permisos y modificarlos.
+
+ - ls -l
+ - chmod 400 tezt.txt
+
+16. modificar permisos para que el propietario pueda leer y escribir
+
+ - chmod 600 test.txt
+
+17. leer ecribir y ejecutar.
+
+ - chmod 764 test.txt
+
+
+
+
