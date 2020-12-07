@@ -3,6 +3,7 @@ import pprint
 import random
 import sys
 import wx
+import serial, time
 
 # The recommended way to use wx with mpl is with the WXAgg
 # backend. 
@@ -16,12 +17,10 @@ from matplotlib.backends.backend_wxagg import \
 import numpy as np
 import pylab
 
+arduino = serial.Serial('COM4',9600)
 
 class DataGen(object):
-    """ A silly class that generates pseudo-random data for
-        display in the plot.
-    """
-    def __init__(self, init=50):
+    def __init__(self, init= float(arduino.readline())):
         self.data = self.init = init
         
     def next(self):
@@ -30,23 +29,11 @@ class DataGen(object):
     
     def _recalc_data(self):
         delta = random.uniform(-0.5, 0.5)
-        r = random.random()
+        self.data = float(arduino.readline()) + delta
 
-        if r > 0.9:
-            self.data += delta * 15
-        elif r > 0.8: 
-            # attraction to the initial value
-            delta += (0.5 if self.init > self.data else -0.5)
-            self.data += delta
-        else:
-            self.data += delta
 
 
 class BoundControlBox(wx.Panel):
-    """ A static box with a couple of radio buttons and a text
-        box. Allows to switch between an automatic mode and a 
-        manual mode with an associated value.
-    """
     def __init__(self, parent, ID, label, initval):
         wx.Panel.__init__(self, parent, ID)
         
@@ -91,9 +78,7 @@ class BoundControlBox(wx.Panel):
 
 
 class GraphFrame(wx.Frame):
-    """ The main frame of the application
-    """
-    title = 'Demo: dynamic matplotlib graph'
+    title = 'Graphicador dinamico control 2'
     
     def __init__(self):
         wx.Frame.__init__(self, None, -1, self.title)
@@ -181,7 +166,7 @@ class GraphFrame(wx.Frame):
 
         self.axes = self.fig.add_subplot(111)
         #self.axes.set_axis_bgcolor('black')
-        self.axes.set_title('Very important random data', size=12)
+        self.axes.set_title('Data de la Fotocelda', size=12)
         
         pylab.setp(self.axes.get_xticklabels(), fontsize=8)
         pylab.setp(self.axes.get_yticklabels(), fontsize=8)
