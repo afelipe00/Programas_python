@@ -20,6 +20,36 @@ posts = [
     }
 
 ]
+
+posts_temp = [
+    {
+        'title': 'Mont blanc',
+        'user': {
+            'name': 'Yesica Cortez',
+            'picture': 'profile image',
+        },
+        'timestamp': datetime.now().strftime('%Y/%m/%d - %H:%M:%S'),
+        'photo': 'posts'
+    },
+    {
+        'title': 'Via Lactea',
+        'user': {
+            'name': 'Yesica Cortez',
+            'picture': 'profile image',
+        },
+        'timestamp': datetime.now().strftime('%Y/%m/%d - %H:%M:%S'),
+        'photo': 'posts'
+    },
+    {
+        'title': 'Nuevo auditorio',
+        'user': {
+            'name': 'Yesica Cortez',
+            'picture': 'profile image',
+        },
+        'timestamp': datetime.now().strftime('%Y/%m/%d - %H:%M:%S'),
+        'photo': 'posts'
+    }
+]
 def list_posts(request):
     res = {
         'status': 'A200',
@@ -47,4 +77,11 @@ def list_postCGI(request):
         """.format(**post))
     return HttpResponse(
         '<br>'.join(content)
+    )
+
+def list_render(request):
+    return render(
+        request= request,
+        template_name= 'feed.html',
+        context= {'posts': posts_temp}
     )

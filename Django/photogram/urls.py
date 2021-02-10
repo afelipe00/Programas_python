@@ -30,5 +30,6 @@ urlpatterns = [
     path('sorted/',local_views.sorted_numbers),
     path('hi/<str:name>/<int:age>',local_views.say_hi),
     path('posts/',post_views.list_posts),
-    path('CGIposts/',post_views.list_postCGI)
+    path('CGIposts/',post_views.list_postCGI),
+    path('renposts/',post_views.list_render)
 ]
